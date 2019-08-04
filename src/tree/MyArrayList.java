@@ -63,7 +63,9 @@ public class MyArrayList<E> {
 		list.add(167);
 		list.add(267);
 		list.add(367);
+
 		list.add(7, 5667);
+		list.remove(6);
 		
 		System.out.println("");
 		
@@ -71,7 +73,11 @@ public class MyArrayList<E> {
 	
 	void remove(int index) {
 		
-		
+		int moveData = size - index-1;
+		System.arraycopy(arr, index+1, arr, index, moveData);
+
+		arr[--size]=null;
+		System.out.print("Deleted");
 	}
 	
 	
